@@ -23,8 +23,166 @@ h1 span { color: var(--lime); }
 .timeline-section { padding: 128px 8vw 120px; }
 .section-intro { max-width: 530px; margin-bottom: 94px; }.section-intro h2 { font-size: clamp(38px, 5vw, 70px); line-height: .98; letter-spacing: -.06em; margin: 0 0 26px; }.section-intro h2 em { color: var(--blue); font-style: normal; }.section-intro > p:last-child { color: var(--muted); line-height: 1.6; max-width: 415px; }
 .timeline { position: relative; display: flex; gap: 24px; max-width: none; margin: 0; padding: 24px 8vw 45px 0; overflow-x: auto; scrollbar-color: var(--blue) var(--line); scrollbar-width: thin; }.timeline::before { content: ''; position: absolute; left: 0; right: 0; top: 77px; height: 1px; background: var(--line); }
-.timeline-card { display: flex; flex-direction: column; gap: 18px; position: relative; flex: 0 0 300px; margin: 0; }.year { color: var(--blue); font-size: 14px; padding-top: 0; width: auto; text-align: left; flex: 0 0 auto; }.year::after { content: ''; width: 11px; height: 11px; background: var(--lime); border: 3px solid var(--paper); outline: 1px solid var(--blue); border-radius: 50%; position: absolute; left: 3px; top: 72px; z-index: 1; }
+.timeline-card { display: flex; flex-direction: column; gap: 18px; position: relative; flex: 0 0 300px; margin: 0; }.year { position: relative; color: var(--blue); font-size: 14px; padding-top: 0; width: auto; text-align: left; flex: 0 0 auto; }.year::after { content: ''; width: 11px; height: 11px; background: var(--lime); border: 3px solid var(--paper); outline: 1px solid var(--blue); border-radius: 50%; position: absolute; left: 3px; top: 72px; z-index: 1; }
 .card-content { background: white; width: 100%; padding: 18px 18px 28px; box-shadow: 0 8px 30px rgba(16,35,50,.04); transition: transform .3s ease, box-shadow .3s ease; }.card-content:hover { transform: translateY(-8px); box-shadow: 0 18px 34px rgba(16,35,50,.12); }.card-content img { width: 100%; height: 160px; object-fit: cover; display: block; filter: saturate(.75); transition: filter .3s ease; }.card-content:hover img { filter: saturate(1); }.card-number { color: var(--muted); font-size: 10px; margin: 24px 0 8px; }.card-content h3 { font-size: 28px; letter-spacing: -.04em; margin: 0 0 16px; }.card-content p:last-child { color: var(--muted); line-height: 1.6; font-size: 14px; margin: 0; max-height: 0; opacity: 0; overflow: hidden; transition: max-height .35s ease, opacity .35s ease; }.card-content:hover p:last-child { max-height: 150px; opacity: 1; }.featured-card .card-content { background: var(--ink); color: white; }.featured-card .card-content p:last-child { color: #aebec4; }.featured-card .card-number { color: var(--lime); }
-footer { border-top: 1px solid var(--line); padding: 28px 8vw; color: var(--muted); font-size: 10px; display: flex; justify-content: space-between; } footer a { text-decoration: none; color: var(--blue); } footer span { color: var(--lime); margin: 0 8px; }
+.site-footer { border-top: 1px solid var(--line); padding: 28px 8vw; color: var(--muted); font-size: 10px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.site-footer p { margin: 0; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+.site-footer a { text-decoration: none; color: var(--blue); } .site-footer span { color: var(--lime); margin: 0 8px; }
 
 @media (max-width: 650px) { .hero { min-height: 620px; padding: 32px 24px 50px; }.intel-logo { margin-bottom: 90px; }.hero-stamp { right: 24px; bottom: 43px; width: 86px; height: 86px; }.hero-stamp span { font-size: 20px; }.timeline-section { padding: 84px 24px; }.section-intro { margin-bottom: 60px; }.timeline { display: block; padding: 0 0 0 0; overflow: visible; }.timeline::before { left: 8px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; }.timeline-card { display: flex; flex-direction: row; gap: 28px; margin-bottom: 48px; }.year { width: 18px; flex-basis: 18px; padding-top: 26px; font-size: 10px; transform: rotate(-90deg); transform-origin: top left; margin-left: 6px; white-space: nowrap; }.year::after { left: -3px; top: 27px; }.card-content { padding: 12px 12px 22px; }.card-content img { height: 100px; }.card-content h3 { font-size: 21px; }.card-content p:last-child { font-size: 13px; max-height: none; opacity: 1; } footer { padding: 24px; align-items: flex-start; gap: 20px; flex-direction: column; } }
+
+/* ========================================
+   PROJECT 3 - NEWSLETTER
+   ======================================== */
+
+.newsletter-section {
+  padding: 100px 0;
+  background: var(--ink);
+  color: white;
+}
+
+.newsletter-box {
+  padding: 20px 0;
+}
+
+.newsletter-section h2 {
+  font-size: clamp(34px, 4vw, 55px);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+
+.newsletter-section p:not(.eyebrow) {
+  color: #c7d2d7;
+  line-height: 1.7;
+}
+
+.newsletter-section .form-label {
+  color: white;
+  font-weight: 600;
+}
+
+.newsletter-section .form-control {
+  border-radius: 0;
+  border: 2px solid transparent;
+  padding: 14px 16px;
+}
+
+.newsletter-section .form-control:focus {
+  border-color: var(--lime);
+  box-shadow: 0 0 0 0.25rem rgba(215, 255, 56, 0.2);
+}
+
+.newsletter-section .form-text {
+  color: #c7d2d7;
+}
+
+.subscribe-btn {
+  background: var(--lime);
+  color: var(--ink);
+  border-radius: 0;
+  padding: 15px 24px;
+  font-weight: 700;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  background: white;
+  color: var(--ink);
+}
+
+/* ========================================
+   PROJECT 3 - SUSTAINABILITY SECTION
+   ======================================== */
+
+.sustainability-section {
+  padding: 110px 0;
+  background: white;
+}
+
+.sustainability-section h2 {
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.05em;
+  margin-bottom: 20px;
+}
+
+.section-label {
+  color: var(--blue);
+}
+
+.section-description {
+  max-width: 650px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.sustainability-card {
+  padding: 38px;
+  background: var(--paper);
+  border-top: 4px solid var(--blue);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sustainability-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(16, 35, 50, 0.12);
+}
+
+.sustainability-icon {
+  display: inline-block;
+  font-size: 42px;
+  color: var(--blue);
+  margin-bottom: 28px;
+}
+
+.sustainability-card h3 {
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.sustainability-card p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.learn-more {
+  color: var(--blue);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--blue);
+  padding-bottom: 5px;
+}
+
+.learn-more:hover,
+.learn-more:focus {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ========================================
+   RTL / LOCALIZATION SUPPORT
+   ======================================== */
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="rtl"] .year {
+  text-align: right;
+}
+
+html[dir="rtl"] .scroll-link span {
+  margin-left: 0;
+  margin-right: 16px;
+}
+
+html[dir="rtl"] .site-footer nav {
+  flex-direction: row-reverse;
+}
